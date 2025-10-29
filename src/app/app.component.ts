@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { BookService } from './core/book.service'; 
+import { BookListComponent } from './features/book-list/book-list.component'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [BookListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'book-tracker';
+  private bookService = inject(BookService);
+
+  public wishlist = this.bookService.wishlist;
+  public unread = this.bookService.unread;
+  public reading = this.bookService.reading;
+  public read = this.bookService.read;
 }

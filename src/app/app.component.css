@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}

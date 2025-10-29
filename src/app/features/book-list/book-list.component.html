@@ -1,0 +1,21 @@
+<div class="list-container">
+  <h3>{{ title }} ({{ books.length }})</h3>
+  <ul>
+    <li *ngFor="let book of books">
+      <div class="book-info">
+        <strong>{{ book.title }}</strong>
+        <small>{{ book.author }}</small>
+      </div>
+      
+      <select [value]="book.status" (change)="onStatusChange($event, book)">
+        <option *ngFor="let status of allStatus" [value]="status">
+          {{ status }}
+        </option>
+      </select>
+    </li>
+    
+    <li *ngIf="books.length === 0">
+      <small>No hay libros en esta lista.</small>
+    </li>
+  </ul>
+</div>
