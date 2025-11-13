@@ -6,14 +6,18 @@
         <strong>{{ book.title }}</strong>
         <small>{{ book.author }}</small>
       </div>
-      
-      <select [value]="book.status" (change)="onStatusChange($event, book)">
-        <option *ngFor="let status of allStatus" [value]="status">
+
+      <select (change)="onStatusChange($event, book)">
+        <option
+          *ngFor="let status of allStatus"
+          [value]="status"
+          [selected]="status === book.status"
+        >
           {{ status }}
         </option>
       </select>
     </li>
-    
+
     <li *ngIf="books.length === 0">
       <small>No hay libros en esta lista.</small>
     </li>
