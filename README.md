@@ -1,6 +1,33 @@
-# BookTracker
+## 📚 BookTracker
+This is a simple Angular (This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1) project built as a hands-on exercise to learn and demonstrate the framework's modern features.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+The application allows a user to manage a book collection, classifying books into four dynamic lists:
+
+* Wishlist
+
+* Unread
+
+* Reading
+
+* Read
+
+The primary goal is to test how the application state reacts and updates automatically using Signals.
+
+## 🚀 Key Concepts Demonstrated
+This project serves as a practical example of:
+
+Signals: The main state (the book list) is managed in a BookService using a signal().
+
+Computed Signals: The four lists (wishlist, reading, etc.) are generated using computed(). They update automatically whenever the main signal changes.
+
+Standalone Components: The entire application is built without NgModules. AppComponent and BookListComponent are both standalone: true.
+
+Standalone Imports: The BookListComponent imports CommonModule directly into its imports array to use *ngFor and *ngIf.
+
+Signal-based Inputs: The BookListComponent uses the new input() function to receive data from AppComponent.
+
+Simple Architecture: A "smart" service (BookService) manages state, a "smart" component (AppComponent) consumes it, and a "dumb" component (BookListComponent) just presents it.
+
 
 ## Development server
 
